@@ -16,7 +16,7 @@
     </div>
     <div>
         <h2>球队简介</h2>
-        <table>
+        <table class="intro">
             <tr>
                 <td>中文队名</td>
                 <td>金州勇士队</td>
@@ -69,11 +69,16 @@
     </div>
     <div>
         <h2>相关视频</h2>
-        <video width="600" height="300" controls autoplay muted poster="nab-finals.png" >
-            <source src="videos/Stephen Curry s Ultimate Career Mixtape.mp4" type="video/mp4">
+        <video width="600" height="300" controls autoplay muted poster="nab-finals.png">
+            <source src="videos/电人·Windows-1 .mp3" type="video/mp4">
             <p>你的浏览器不支持 HTML5 视频。</p>
         </video>
-        <a href="videos/Stephen Curry s Ultimate Career Mixtape.mp4" download>下载该视频</a>
+        <br>
+        <audio controls>
+            <source src="videos/电人·Windows-1 .mp3" type="audio/mp3">
+            <p>你的浏览器不支持 HTML5 音频。</p>
+        </audio>
+        <a href="videos/电人·Windows-1 .mp3" download>下载该音频</a>
     </div>
     <div>
         <h2>现任球员</h2>
@@ -93,26 +98,933 @@
         </ul>
     </div>
     <div>
+        <h2>最新比赛</h2>
+        <p>北京时间2017年6月5日，金州勇士坐镇主场再战骑士，这一场比赛勇士主帅史蒂夫-科尔伤愈回归，首节比赛前半段骑士在詹姆斯的带领下稍占优势， 不过勇士这边随着外线打开局面很快扭转局面，他们这一节命中5记三分，单节轰下40分并带着7分的领先进入第二节。
+            次节勇士连砍7分曾将分差拉大至12分，骑士立刻叫了暂停并有着不错效果，詹姆斯连续送出助攻帮助球队打出攻势， 凭借着一波10-2的表现他们曾将分差追至1分，勇士最后时刻守住微弱优势并以67-64结束上半场。 易边再战，勇士开局迅速控制局面，杜兰特打成精彩3+1吹响进攻号角，随后库里和格林相继命中三分，
+            勇士依靠着连续的反击进球再次将分差扩大至两位数，骑士暂停归来之后曾一度将分差追至4分，奈何勇士火力太猛， 随着一波13-2的攻势，勇士在第三节结束时以102-88带着14分的领先进入第四节。末节骑士虽然早早换上了詹姆斯和乐福等人，
+            但局面上他们仍然处于弱势，勇士在杜兰特的库里的带领下一度将分差扩大至20分以上。最终，勇士132-113大胜骑士再下一城，总比分上2-0取得领先。
+        </p>
+        <p>骑士数据：勒布朗-詹姆斯29分14次助攻11个篮板；凯里-欧文19分7次助攻；凯文-乐福27分7个篮板；凯尔-科沃尔8分；伊曼-香珀特6分4个篮板3次抢断。</p>
+        <p>勇士数据：凯文-杜兰特33分13个篮板6次助攻3次抢断5次封盖；斯蒂芬-库里32分11次助攻10个篮板，同时出现8次失误；克莱-汤普森22分7个篮板；德雷蒙德-格林12分6个篮板6次助攻；肖恩-利文斯顿10分。</p>
+        <div class="team_vs">
+            <div class="team_vs_box">
+                <div class="team_a">
+                    <div class="img">
+                        <a href="" target="_blank">
+                            <img src="images/CLE.png" alt="骑士" height="95" width="95">
+                        </a>
+                    </div>
+                    <div class="message">
+                        <h2>113</h2>
+                        <small>骑士（0）</small>
+                    </div>
+                </div>
+                <div class="team_b">
+                    <div class="img">
+                        <a href="" target="_blank">
+                            <img src="images/GSW.png" alt="勇士" height="95" width="95">
+                        </a>
+                    </div>
+                    <div class="message">
+                        <h2>132</h2>
+                        <small>勇士（2）</small>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>骑士（客队）</h3>
+                <table class="statis">
+                    <tbody>
+                        <thead style="background-color: rgb(251, 251, 251);">
+                            <th width="150">首发</th>
+                            <th width="23"></th>
+                            <th>时间</th>
+                            <th>投篮</th>
+                            <th>3分</th>
+                            <th>罚球</th>
+                            <th>前场</th>
+                            <th>后场</th>
+                            <th>篮板</th>
+                            <th>助攻</th>
+                            <th>犯规</th>
+                            <th>抢断</th>
+                            <th>失误</th>
+                            <th>封盖</th>
+                            <th>得分</th>
+                            <th>+/-</th>
+                        </thead>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">凯里-欧文</a></td>
+                            <td>G</td>
+                            <td>40</td>
+                            <td>8-23</td>
+                            <td>2-6</td>
+                            <td>1-2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>7</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>19</td>
+                            <td>-17</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">JR-史密斯</a></td>
+                            <td>G/F</td>
+                            <td>14</td>
+                            <td>0-2</td>
+                            <td>0-2</td>
+                            <td>0-0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                2</td>
+                            <td>
+                                0</td>
+                            <td>4</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                -18
+                            </td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">勒布朗-詹姆斯</a></td>
+                            <td>F</td>
+                            <td>39</td>
+                            <td>12-18</td>
+                            <td>1-3</td>
+                            <td>4-5</td>
+                            <td>0</td>
+                            <td>11</td>
+                            <td>
+                                <span>11</span></td>
+                            <td>
+                                <span>14</span></td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>
+                                <span class="high">29</span></td>
+                            <td>
+                                -11
+                            </td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">凯文-乐福</a></td>
+                            <td>F/C</td>
+                            <td>30</td>
+                            <td>12-23</td>
+                            <td>2-7</td>
+                            <td>1-1</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>
+                                7</td>
+                            <td>
+                                0</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                27</td>
+                            <td>
+                                -8
+                            </td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">特里斯坦-汤普森</a></td>
+                            <td>F/C</td>
+                            <td>21</td>
+                            <td>4-7</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>
+                                4</td>
+                            <td>
+                                1</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                8</td>
+                            <td>
+                                -18
+                            </td>
+                        </tr>
+                        <tr style="background-color: rgb(251, 251, 251);">
+                            <th width="150"><b>替补</b></th>
+                            <th width="23"></th>
+                            <th>时间</th>
+                            <th>投篮</th>
+                            <th>3分</th>
+                            <th>罚球</th>
+                            <th>前场</th>
+                            <th>后场</th>
+                            <th>篮板</th>
+                            <th>助攻</th>
+                            <th>犯规</th>
+                            <th>抢断</th>
+                            <th>失误</th>
+                            <th>封盖</th>
+                            <th>得分</th>
+                            <th>+/-</th>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">凯尔-科沃尔</a></td>
+                            <td>G/F</td>
+                            <td>23</td>
+                            <td>2-4</td>
+                            <td>1-3</td>
+                            <td>3-3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                8</td>
+                            <td>
+                                -3</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">伊曼-香珀特</a></td>
+                            <td>G/F</td>
+                            <td>22</td>
+                            <td>1-6</td>
+                            <td>0-2</td>
+                            <td>4-4</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>
+                                4</td>
+                            <td>
+                                0</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                6</td>
+                            <td>
+                                -5</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">德隆-威廉姆斯</a></td>
+                            <td>PG</td>
+                            <td>14</td>
+                            <td>0-5</td>
+                            <td>0-2</td>
+                            <td>0-0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>
+                                3</td>
+                            <td>
+                                3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                -8</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">理查德-杰弗森</a></td>
+                            <td>G/F</td>
+                            <td>13</td>
+                            <td>2-3</td>
+                            <td>1-2</td>
+                            <td>2-4</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>
+                                1</td>
+                            <td>
+                                0</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                7</td>
+                            <td>
+                                -7</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">钱宁-弗莱</a></td>
+                            <td>F/C</td>
+                            <td>11</td>
+                            <td>1-5</td>
+                            <td>0-1</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>
+                                3</td>
+                            <td>
+                                1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                2</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">邓台-琼斯</a></td>
+                            <td>G/F</td>
+                            <td>4</td>
+                            <td>1-1</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>
+                                3</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                2</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">詹姆斯-琼斯</a></td>
+                            <td>G/F</td>
+                            <td>4</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>
+                                1</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">德里克-威廉姆斯</a></td>
+                            <td>F</td>
+                            <td>4</td>
+                            <td>2-3</td>
+                            <td>1-1</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                5</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">凯-费尔德</a></td>
+                            <td>PG</td>
+                            <td>0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">埃迪-塔瓦雷斯</a></td>
+                            <td>C</td>
+                            <td>0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr class="title bg_a" style="background-color: rgb(251, 251, 251);">
+                            <td width="150">统计</td>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td>
+                                45-100
+                            </td>
+                            <td>
+                                8-29
+                            </td>
+                            <td>
+                                15-19
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                41
+                            </td>
+                            <td>
+                                27
+                            </td>
+                            <td>
+                                18
+                            </td>
+                            <td>
+                                15
+                            </td>
+                            <td>
+                                9
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                113
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr style="background-color: rgb(251, 251, 251);">
+                            <td width="150">命中率</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                45.0%</td>
+                            <td>
+                                27.6%</td>
+                            <td>
+                                78.9%</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>勇士（主队）</h3>
+                <table class="statis">
+                    <tbody>
+                        <thead>
+                            <th width="150">首发</th>
+                            <th width="23"></th>
+                            <th>时间</th>
+                            <th>投篮</th>
+                            <th>3分</th>
+                            <th>罚球</th>
+                            <th>前场</th>
+                            <th>后场</th>
+                            <th>篮板</th>
+                            <th>助攻</th>
+                            <th>犯规</th>
+                            <th>抢断</th>
+                            <th>失误</th>
+                            <th>封盖</th>
+                            <th>得分</th>
+                            <th>+/-</th>
+                        </thead>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">斯蒂芬-库里</a></td>
+                            <td>G</td>
+                            <td>36</td>
+                            <td>7-17</td>
+                            <td>4-11</td>
+                            <td>14-14</td>
+                            <td>2</td>
+                            <td>8</td>
+                            <td>
+                                10</td>
+                            <td>
+                                <span>11</span></td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>0</td>
+                            <td>
+                                32</td>
+                            <td>
+                                +21</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">克莱-汤普森</a></td>
+                            <td>G/F</td>
+                            <td>37</td>
+                            <td>8-12</td>
+                            <td>4-7</td>
+                            <td>2-3</td>
+                            <td>1</td>
+                            <td>6</td>
+                            <td>
+                                7</td>
+                            <td>
+                                1</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>
+                                22</td>
+                            <td>
+                                <span>+24</span></td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">凯文-杜兰特</a></td>
+                            <td>F</td>
+                            <td>41</td>
+                            <td>13-22</td>
+                            <td>4-8</td>
+                            <td>3-3</td>
+                            <td>2</td>
+                            <td>11</td>
+                            <td>
+                                <span>13</span></td>
+                            <td>
+                                6</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>
+                                <span>33</span></td>
+                            <td>
+                                +21</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">德雷蒙德-格林</a></td>
+                            <td>F</td>
+                            <td>25</td>
+                            <td>4-8</td>
+                            <td>3-6</td>
+                            <td>1-2</td>
+                            <td>0</td>
+                            <td>6</td>
+                            <td>
+                                6</td>
+                            <td>
+                                6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>
+                                12</td>
+                            <td>
+                                +14</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">扎扎-帕楚里亚</a></td>
+                            <td>C</td>
+                            <td>13</td>
+                            <td>1-2</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>
+                                2</td>
+                            <td>
+                                0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>
+                                2</td>
+                            <td>
+                                +13</td>
+                        </tr>
+                        <tr>
+                            <th width="150"><b>替补</b></th>
+                            <th width="23"></th>
+                            <th>时间</th>
+                            <th>投篮</th>
+                            <th>3分</th>
+                            <th>罚球</th>
+                            <th>前场</th>
+                            <th>后场</th>
+                            <th>篮板</th>
+                            <th>助攻</th>
+                            <th>犯规</th>
+                            <th>抢断</th>
+                            <th>失误</th>
+                            <th>封盖</th>
+                            <th>得分</th>
+                            <th>+/-</th>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">安德烈-伊格达拉</a></td>
+                            <td>G/F</td>
+                            <td>28</td>
+                            <td>2-6</td>
+                            <td>1-4</td>
+                            <td>0-0</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>
+                                4</td>
+                            <td>
+                                5</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                5</td>
+                            <td>
+                                +9</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">肖恩-利文斯顿</a></td>
+                            <td>G</td>
+                            <td>19</td>
+                            <td>4-7</td>
+                            <td>0-0</td>
+                            <td>2-2</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>
+                                1</td>
+                            <td>
+                                1</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                10</td>
+                            <td>
+                                -10</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">伊恩-克拉克</a></td>
+                            <td>G</td>
+                            <td>13</td>
+                            <td>4-8</td>
+                            <td>2-5</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>
+                                2</td>
+                            <td>
+                                2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                10</td>
+                            <td>
+                                +1</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">大卫-韦斯特</a></td>
+                            <td>PF</td>
+                            <td>11</td>
+                            <td>1-2</td>
+                            <td>0-1</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>
+                                3</td>
+                            <td>
+                                2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>
+                                2</td>
+                            <td>
+                                +4</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">帕特里克-麦考</a></td>
+                            <td>G/F</td>
+                            <td>7</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>
+                                1</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                +3</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">詹姆斯-迈克尔-麦卡杜</a></td>
+                            <td>PF</td>
+                            <td>4</td>
+                            <td>1-2</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                1</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                2</td>
+                            <td>
+                                -2</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">马特-巴恩斯</a></td>
+                            <td>G/F</td>
+                            <td>3</td>
+                            <td>0-1</td>
+                            <td>0-1</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                -2</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">贾维尔-麦基</a></td>
+                            <td>C</td>
+                            <td>3</td>
+                            <td>1-2</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>
+                                3</td>
+                            <td>
+                                0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                2</td>
+                            <td>
+                                -1</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">达米安-琼斯</a></td>
+                            <td>C</td>
+                            <td>0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td><a href="" target="_blank">凯文-卢尼</a></td>
+                            <td>PF</td>
+                            <td>0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0-0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                0</td>
+                            <td>
+                                0</td>
+                        </tr>
+                        <tr class="title bg_a">
+                            <td width="150">统计</td>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td>
+                                46-89
+                            </td>
+                            <td>
+                                18-43
+                            </td>
+                            <td>
+                                22-24
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                43
+                            </td>
+                            <td>
+                                53
+                            </td>
+                            <td>
+                                34
+                            </td>
+                            <td>
+                                19
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                20
+                            </td>
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                132
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr class="title bg_a">
+                            <td width="150">命中率</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                51.7%</td>
+                            <td>
+                                41.9%</td>
+                            <td>
+                                91.7%</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>
         <dl>
-            <dt><h2>友情的链接</h2></dt>
+            <dt>
+                <h2>友情的链接</h2>
+            </dt>
             <dd><a href="https://nba.hupu.com/" title="可能是最好的篮球网站" target="_blank">虎扑篮球</a></dd>
             <dd><a href="http://sports.sina.com.cn/nba/" title="我是新浪体育" target="_blank">新浪体育 - NBA</a></dd>
         </dl>
     </div>
     <div>
         <dl>
-            <dt><h2>不要联系我</h2></dt>
+            <dt>
+                <h2>不要联系我</h2>
+            </dt>
             <dd>我的电话 <a href="tel:+8613511112222">+86 13611112222</a></dd>
             <dd>我的邮箱 <a href="mailto:709972759@qq.com?cc=274755793@qq.com">709972759@qq.com</a></dd>
         </dl>
     </div>
     <a href="#">返回页面顶部</a>
-    <form>
-        数字<input type="number" name="id" value=""><br>
-        时间<input type="date"><br>
-        email<input type="email"><br>
-        telphone <input type="tel">
-    </form>
+
 </body>
 
 </html>

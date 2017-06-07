@@ -1,5 +1,13 @@
+body {
+    font: 14px/1.5 arial,'\5b8b\4f53',sans-serif;
+}
+
 div {
     display: block;
+}
+
+p {
+    text-indent:2em;
 }
 
 a {
@@ -19,15 +27,44 @@ tr {
     border-color: inherit;
 }
 
-tr, td {
+th, tr, td {
     border: 1px solid #ccc;
 }
 
-td:nth-of-type(2n+1) {
+.intro td:nth-of-type(2n+1) {
     width: 100px;
 }
 
-td:nth-of-type(2n) {
+.intro td:nth-of-type(2n) {
     width: 240px;
+}
+
+.team_vs_box {
+    padding: 10px 20px;
+    border: 1px #f3f3f3 solid;
+    height: 135px;
+}
+
+.team_a, .team_a .img, .team_a .message {
+    float: left;
+    padding: 10px 20px;
+}
+
+.team_b, .team_b .img, .team_b .message {
+    float: right;
+    padding: 10px 20px;
+}
+
+.img {
+    width: 95px;
+    height: 95px;
+    background-color: #fFF;
+    float: left;
+}
+
+.statis tbody td {
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
 }
 
