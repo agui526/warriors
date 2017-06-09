@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <title>会员注册</title>
+</head>
+
+<body>
+    <div id="main">
+    <div>
+        <form action="ok.html" method="post">
+            <table>
+                <caption>会员信息表</caption>
+                <tr>
+                    <td><span>姓名</span></td>
+                    <td><input class="samll_width" type="text" name="uname" value="" required maxlength="16" placeholder="输入你的名字"></td>
+                    <td>性别</td>
+                    <td><input type="radio" name="sex" value="1">男<input type="radio" name="sex" value="0">女</td>
+                </tr>
+                <tr>
+                    <td>住址</td>
+                    <td colspan="3"><input class="big_width" type="text" name="address" value="" placeholder="请输入你的详细住址">
+                    </td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td><input class="samll_width" type="email" name="email" value=""></td>
+                    <td>生日</td>
+                    <td><input class="samll_width" type="date" name="birthday"></td>
+                </tr>
+                <tr>
+                    <td><span>联系电话</span></td>
+                    <td><input class="samll_width" type="tel" name="telphone" required></td>
+                    <td>QQ</td>
+                    <td><input class="samll_width" type="number" name="qq"></td>
+                </tr>
+                <tr>
+                    <td>爱好</td>
+                    <td colspan="3"><input type="checkbox" name="hobby" value="pashan">爬山
+                        <input type="checkbox" name="hobby" value="qiche">骑车
+                        <input type="checkbox" name="hobby" value="daqiu">打球
+                        <input type="checkbox" name="hobby" value="paobu">跑步
+                        <input type="checkbox" name="hobby" value="kanshu">看书</td>
+                </tr>
+                <tr>
+                    <td>上传照片</td>
+                    <td colspan="3"><input type="file" name="photo" accept="image/*">
+                </tr>
+                <tr>
+                    <td>您的意见</td>
+                    <td colspan="3"><textarea name="sugg" class="big_width" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">提交</button></td>
+                    <td colspan="2"><button type="reset">重置</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:center;"><span>红色为必填项</span></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div style="width:670px;">
+        <form oninput="result.value = Math.pow(num1.value, num2.value)" class="calculator">
+            <fieldset>
+                <legend>次方计算</legend>
+                <input style="width:60px" type="number" id="num1">^<input style="width:60px" type="number" id="num2"> = 
+                <output name="result"></output>
+            </fieldset>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

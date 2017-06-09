@@ -1,0 +1,55 @@
+body {
+    font: 14px/1.5 arial,'\5b8b\4f53',sans-serif;
+}
+
+div {
+    display: block;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+tr, td {
+    border: 1px solid #ccc;
+}
+
+td:nth-of-type(2n+1) {
+    width: 80px;
+    text-align: right;
+    padding: 0 4px;
+}
+
+td:nth-of-type(2n) {
+    width: 240px;
+}
+
+input {
+    margin: 1px 4px;
+}
+
+caption {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.samll_width { 
+    width: 220px;
+}
+
+.big_width {
+    width: 553px;
+}
+
+span {
+    color: red;
+}
