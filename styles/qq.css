@@ -17,13 +17,7 @@ body {
 }
 
 .content {
-    margin: 0 auto;
     padding-top: 30px;
-}
-
-.login {
-    width: 290px;
-    margin: 0 auto;
 }
 
 .logo {
@@ -31,6 +25,11 @@ body {
     height: 100px;
     margin: 0 auto 20px;
     background-image: url(../images/shipei_logo.png);
+}
+
+.login {
+    width: 290px;
+    margin: 0 auto;
 }
 
 .inputstyle {
@@ -41,6 +40,7 @@ body {
     padding-left: 15px;
     border-radius: 4px;
     font-size: 16px;
+    outline: 0;
 }
 
 #uname {
@@ -59,6 +59,12 @@ body {
 .feedback {
     width: 290px;
     margin: 15px auto;
+}
+
+.feedback::after {
+    content: "";
+    clear: both;
+    display: block;
 }
 
 .backstyle {
