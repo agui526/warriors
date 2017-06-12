@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+body, div, input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    background: #eee;
+}
+
+.main {
+    margin: 0 auto;
+    width: 320px;
+    height: 500px;
+}
+
+.content {
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.login {
+    width: 290px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 244px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-image: url(../images/shipei_logo.png);
+}
+
+.inputstyle {
+    width: 275px;
+    height: 44px;
+    line-height: 44px;
+    border: none;
+    padding-left: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#uname {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.btn {
+    width: 290px;
+    background-color: #146fdf;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+.feedback {
+    width: 290px;
+    margin: 15px auto;
+}
+
+.backstyle {
+    color: #246183;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 15px 10px;
+}
+
+#forgetpwd {
+    float: left;
+    margin-left: -10px
+}
+
+#zc {
+    float: right;
+    margin-right: -10px;
+}
