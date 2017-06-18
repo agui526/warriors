@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+body, html, nav, div, ul, li, footer {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+ul > li {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.teams > li {
+    width: 150px;
+}
+
+img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin: 0 8px;
+}
+
+nav {
+    height: 32px;
+    line-height: 32px;
+    background: #a41f24;
+    color: white;
+    width: 750px;
+}
+
+.main {
+    width: 750px;
+    background-color: gray;
+    margin: 0 auto;
+}
+
+.teams > li {
+    float: left;
+    transition: all .5s;
+}
+
+.players > li {
+    float: none;
+    position: relative;
+    background: #a41f24;
+    display: none;
+    font-size: 12px;
+}
+
+ul > li:hover {
+    background-color: rgba(164, 31, 24, 0.5);
+    color: #eee;
+    font-size: 20px;
+}
+
+.players > li:hover {
+    font-size: 16px;
+}
+
+ul > li:hover > ul > li {
+    display: block;
+}
+
+.content {
+    margin: 16px auto;;
+    width: 80%;
+}
+
+.ft {
+    background-color: #a41f24;
+    height: 32px;    
+    line-height: 32px;
+    position: fixed;
+    bottom: 0;
+    width: 750px;
+}
+
+.ft > ul > li {
+    width: 187.5px;
+    float: left;
+    font-size: 12px;
+}
+
+.ft > ul > li:hover {
+    font-size: 16px;
+}
+
