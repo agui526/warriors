@@ -1,6 +1,10 @@
 @charset "utf-8";
 
-body, html, nav, div, ul, li, footer {
+html, body {
+    height: 100%;
+}
+
+body, ul, li {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -11,8 +15,6 @@ body, html, nav, div, ul, li, footer {
 ul > li {
     list-style: none;
     text-align: center;
-    margin: 0;
-    padding: 0;
     cursor: pointer;
 }
 
@@ -37,6 +39,7 @@ nav {
 
 .main {
     width: 750px;
+    height: 100%;
     background-color: gray;
     margin: 0 auto;
 }
@@ -44,11 +47,15 @@ nav {
 .teams > li {
     float: left;
     transition: all .5s;
+    position: relative;
+}
+
+.players {
+    position: absolute;
 }
 
 .players > li {
     float: none;
-    position: relative;
     background: #a41f24;
     display: none;
     font-size: 12px;
@@ -72,7 +79,6 @@ ul > li:hover > ul > li {
 .content {
     margin: 0 auto;
     width: 80%;
-    height: 96%;
 }
 
 .ft {
