@@ -1,0 +1,70 @@
+body {
+    background: seagreen;
+}
+
+.container {
+    width: 200px;
+    height: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.card {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card>.card-front {
+    background-color: white;
+    width: inherit;
+    height: inherit;
+    transform: rotateY(180deg);
+}
+
+.card-front>.icon {
+    font-size: 60px;
+    font-family: serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.card-front>.A {
+    font-size: 48px;
+    font-family: serif;
+    position: absolute;
+}
+
+.card-front>.A.top {
+    left: 10px;
+    top: 0;
+}
+
+.card-front>.A.bottom {
+    right: 10px;
+    bottom: 0;
+    transform: rotateX(180deg);
+}
+
+.card>.card-back {
+    background: repeating-linear-gradient(45deg, tomato 0, tomato 8px, white 8px, white 16px);
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}

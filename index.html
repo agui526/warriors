@@ -7,40 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <title>Golden State Warriors</title>
-    <script type="text/javascript">
-        function getDateDemo() {
-            var myDate = new Date();
-            var year = myDate.getFullYear();
-            var month = myDate.getMonth() + 1;
-            var date = myDate.getDate();
-            var hours = myDate.getHours();
-            var minutes = myDate.getMinutes();
-            var seconds = myDate.getSeconds();
-
-            //月份的显示为两位数字如09月 
-            if (month < 10) {
-                month = "0" + month;
-            }
-            if (date < 10) {
-                date = "0" + date;
-            }
-
-            //时间拼接 
-            var dateTime = year + "年" + month + "月" + date + "日" + hours + "时" + minutes + "分" + seconds + "秒";
-
-            //document.write(dateTime);//打印当前时间 
-
-            var divNode = document.getElementById("time");
-            divNode.innerHTML = "<h4>现在时间 ： " + dateTime + "</h4>";
-
-        }
-        window.setInterval("getDateDemo()", 1000); //每隔1秒，调用一次getDateDemo()
-    </script>
 </head>
 
 <body>
-    <div id="time"></div>
-    <hr>
     <h1>agui的作业</h1>
     <hr>
     <h2>HTML</h2>
