@@ -15,7 +15,7 @@ body {
 .card {
     width: inherit;
     height: inherit;
-    position: relative;
+    /*position: relative;*/
     transition: all 1s;
     transform-style: preserve-3d;
 }

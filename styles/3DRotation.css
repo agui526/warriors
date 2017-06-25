@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    perspective: 1000px;
+    /*perspective-origin: center 300px;;*/
+}
+
+.content {
+    width: 150px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    animation: lunbo 30s linear infinite;
+}
+
+.player {
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 4px;
+    position: absolute;
+    background-size: 150px 200px;  
+    /*backface-visibility: hidden;  */
+}
+
+.player:hover {
+    box-shadow: 0 0 20px #06c;
+}
+
+.content:hover {
+    animation-play-state: paused;
+}
+
+.curry {
+    background-image: url(../images/curry.jpg);
+    transform: rotateY(0) translateZ(360px);
+}
+.curry:hover {
+    transform: rotateY(0) translateZ(360px) scale(1.2, 1.2);
+}
+.durant {
+    background-image: url(../images/durant.jpg);
+    transform: rotateY(60deg) translateZ(360px) ;
+}
+.durant:hover {
+    transform: rotateY(60deg) translateZ(360px) scale(1.2, 1.2);
+}
+.klay {
+    background-image: url(../images/klay.jpg);
+    transform: rotateY(120deg) translateZ(360px);
+}
+.klay:hover {
+    transform: rotateY(120deg) translateZ(360px) scale(1.2, 1.2);
+}
+.green {
+    background-image: url(../images/green.jpg);
+    transform: rotateY(180deg) translateZ(360px);
+}
+.green:hover {
+    transform: rotateY(180deg) translateZ(360px) scale(1.2, 1.2);
+}
+.iguodala {
+    background-image: url(../images/iguodala.jpg);
+    transform: rotateY(240deg) translateZ(360px);
+}
+.iguodala:hover {
+    transform: rotateY(240deg) translateZ(360px) scale(1.2, 1.2);
+}
+.zaza {
+    background-image: url(../images/zaza.jpg);
+    transform: rotateY(300deg) translateZ(360px);
+}
+.zaza:hover {
+    transform: rotateY(300deg) translateZ(360px) scale(1.2, 1.2);
+}
+
+@keyframes lunbo {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
