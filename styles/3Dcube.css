@@ -1,0 +1,97 @@
+html {
+	background: radial-gradient(ellipse at center, #106D0D 0%, #000000 100%);
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*展示舞台*/
+
+.stage {
+	width: 18em;
+	height: 18em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -9em;
+	margin-top: -9em;
+	perspective: 1000px;
+}
+
+
+/*立方体*/
+
+.cube {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transform: rotateX(-18deg) rotateY(-18deg);
+}
+
+
+/*各个面的形状*/
+
+.cube div {
+	background: -webkit-linear-gradient(left, rgba(54, 226, 248, 0.5) 0px, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), -webkit-linear-gradient(top, rgba(54, 226, 248, 0.5) 0px, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+	background-size: 6em 6em;
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 2px solid rgba(54, 226, 248, 0.5);
+	box-shadow: 0 0 6em rgba(0, 128, 0, 0.4);
+}
+
+.front {
+	transform: translateZ(9em);
+	background-color: red;
+}
+
+.back {
+	transform: translateZ(-9em);
+	background-color: blue;
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(9em);
+	background-color: yellow;
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(9em);
+	background-color: white;
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(9em);
+	background-color: green;
+}
+
+.bottom {
+	transform: rotateX(-90deg) translateZ(9em);
+	background-color: black;
+}
+
+
+/*定义动画帧*/
+
+@keyframes spin {
+	0% {
+		transform: translateZ(-9em) rotateX(0) rotateY(0);
+	}
+	100% {
+		transform: translateZ(-9em) rotateX(360deg) rotateY(360deg);
+	}
+}
+
+
+/*动画*/
+
+.Animation-spin {
+	/*animation: spin 6s ease-in-out infinite;*/
+}

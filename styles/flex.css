@@ -1,0 +1,337 @@
+/** {
+  box-sizing: border-box;
+}*/
+
+
+/*html, body {
+    height: 100%;
+}*/
+
+body,
+ul,
+li,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100vh;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at center, white 0%, #000000 100%);
+    perspective: 1000px;
+    /*perspective-origin: center 300px;;*/
+}
+
+.content {
+    width: 150px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    animation: lunbo 30s linear infinite;
+}
+
+.player {
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 4px;
+    position: absolute;
+    background-size: 150px 200px;
+    /*backface-visibility: hidden;  */
+    transition: 0.3s;
+}
+
+.player:hover {
+    box-shadow: 0 0 20px #06c;
+}
+
+.content:hover {
+    animation-play-state: paused;
+}
+
+.curry {
+    background-image: url(../images/curry.jpg);
+    transform: rotateY(0) translateZ(360px);
+}
+
+.curry:hover {
+    transform: rotateY(0) translateZ(360px) scale(1.2, 1.2);
+}
+
+.durant {
+    background-image: url(../images/durant.jpg);
+    transform: rotateY(60deg) translateZ(360px);
+}
+
+.durant:hover {
+    transform: rotateY(60deg) translateZ(360px) scale(1.2, 1.2);
+}
+
+.klay {
+    background-image: url(../images/klay.jpg);
+    transform: rotateY(120deg) translateZ(360px);
+}
+
+.klay:hover {
+    transform: rotateY(120deg) translateZ(360px) scale(1.2, 1.2);
+}
+
+.green {
+    background-image: url(../images/green.jpg);
+    transform: rotateY(180deg) translateZ(360px);
+}
+
+.green:hover {
+    transform: rotateY(180deg) translateZ(360px) scale(1.2, 1.2);
+}
+
+.iguodala {
+    background-image: url(../images/iguodala.jpg);
+    transform: rotateY(240deg) translateZ(360px);
+}
+
+.iguodala:hover {
+    transform: rotateY(240deg) translateZ(360px) scale(1.2, 1.2);
+}
+
+.zaza {
+    background-image: url(../images/zaza.jpg);
+    transform: rotateY(300deg) translateZ(360px);
+}
+
+.zaza:hover {
+    transform: rotateY(300deg) translateZ(360px) scale(1.2, 1.2);
+}
+
+@keyframes lunbo {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.header {
+    width: 100%;
+    /*margin: auto;*/
+    position: absolute;
+    background: rgba(255, 255, 255, .9);
+    z-index: 9;
+}
+
+ul,
+li {
+    list-style: none;
+    display: flex;
+    text-align: center;
+}
+
+.container>.logo {
+    flex: 1;
+}
+
+.container>.logo>img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    margin: 10px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.warriors,
+.infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.warriors {
+    flex: 4;
+}
+
+.warriors>li {
+    flex: 1 1 150px;
+    position: relative;
+    justify-content: center;
+    line-height: 62px;
+    ;
+}
+
+.infos {
+    flex: 2;
+}
+
+.infos>li {
+    flex: 0 1 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .3s;
+    color: #333;
+}
+
+.infos>li:hover {
+    color: #666;
+}
+
+.warriors>li:hover,
+.infos>li:hover {
+    cursor: pointer;
+}
+
+.warriors>li::after {
+    left: 0;
+    bottom: 0;
+    height: 0;
+    z-index: 99;
+    width: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    transition: .3s;
+    background: #eb0028;
+}
+
+.warriors>li:hover::after {
+    height: 3px;
+}
+
+.toggle,
+.toggle-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+    z-index: 99;
+    cursor: pointer;
+    display: none;
+}
+
+.toggle {
+    border-radius: 4px;
+    text-align: center;
+    line-height: 42px;
+    border: 1px solid #ccc;
+    font-size: 24px;
+}
+
+.toggle-checkbox {
+    opacity: 0;
+}
+
+.toggle-checkbox:checked~.container>.nav {
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .container>.nav {
+        display: none;
+    }
+    .toggle,
+    .toggle-checkbox {
+        display: block;
+    }
+    .container .logo {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+    }
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .container>.warriors {
+        flex-direction: column;
+        flex-basis: 100%;
+        height: 248px;
+    }
+    .warriors,
+    .infos {
+        width: 100%;
+    }
+    .warriors>li {
+        width: 100%;
+        align-items: center;
+        font-size: 18px;
+    }
+    .container>.infos {
+        height: 62px;
+        line-height: 62px;
+        font-size: 24px;
+        justify-content: space-around;
+    }
+    .infos span {
+        display: none;
+    }
+    .warriors>li::after {
+        height: 2px !important;
+        transform: scale(0);
+    }
+    .warriors>li:hover::after {
+        transform: scale(1);
+    }
+    .player {
+        background-size: 120px 160px;
+        width: 120px;
+        height: 160px;
+    }
+    .curry {
+        background-image: url(../images/curry.jpg);
+        transform: rotateY(0) translateZ(240px);
+    }
+    .curry:hover {
+        transform: rotateY(0) translateZ(240px) scale(1.2, 1.2);
+    }
+    .durant {
+        background-image: url(../images/durant.jpg);
+        transform: rotateY(60deg) translateZ(240px);
+    }
+    .durant:hover {
+        transform: rotateY(60deg) translateZ(240px) scale(1.2, 1.2);
+    }
+    .klay {
+        background-image: url(../images/klay.jpg);
+        transform: rotateY(120deg) translateZ(240px);
+    }
+    .klay:hover {
+        transform: rotateY(120deg) translateZ(240px) scale(1.2, 1.2);
+    }
+    .green {
+        background-image: url(../images/green.jpg);
+        transform: rotateY(180deg) translateZ(240px);
+    }
+    .green:hover {
+        transform: rotateY(180deg) translateZ(240px) scale(1.2, 1.2);
+    }
+    .iguodala {
+        background-image: url(../images/iguodala.jpg);
+        transform: rotateY(240deg) translateZ(240px);
+    }
+    .iguodala:hover {
+        transform: rotateY(240deg) translateZ(240px) scale(1.2, 1.2);
+    }
+    .zaza {
+        background-image: url(../images/zaza.jpg);
+        transform: rotateY(300deg) translateZ(240px);
+    }
+    .zaza:hover {
+        transform: rotateY(300deg) translateZ(240px) scale(1.2, 1.2);
+    }
+}

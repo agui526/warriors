@@ -11,7 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ccc;
+    /*background-color: #ccc;*/
+    background: radial-gradient(ellipse at center, #106D0D 0%, #000000 100%);
     perspective: 1000px;
     /*perspective-origin: center 300px;;*/
 }
@@ -34,6 +35,7 @@ body {
     position: absolute;
     background-size: 150px 200px;  
     /*backface-visibility: hidden;  */
+    transition: 0.3s;
 }
 
 .player:hover {
