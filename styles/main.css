@@ -1,7 +1,11 @@
 .navbar {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  font-size: 16px; }
   .navbar .navbar-collapse {
     padding: 0 20px 0 20px; }
+  .navbar img {
+    width: 32px;
+    margin-top: -5px; }
   .navbar .nav > li {
     width: 120px;
     text-align: center; }
