@@ -1,9 +1,10 @@
 main {
     margin: 20px;
-    ul, li {
+    ul,
+    li {
         list-style: none;
     }
-    div[class*="col-"] > h4 {
+    div[class*="col-"]>h4 {
         text-align: center;
     }
     .tab-content {
@@ -12,12 +13,15 @@ main {
         border-radius: 0 0 5px 5px;
         padding: 20px;
     }
-    .thumbnail:hover {
-        background-color: $nav-bg-color;
-        cursor: pointer;
-        outline: $font-color-hover solid 2px;
-        .caption {
-            color: $font-color-hover;
+    .thumbnail {
+        padding: 10px;
+        &:hover {
+            background-color: $nav-bg-color;
+            cursor: pointer;
+            outline: $font-color-hover solid 2px;
+            .caption {
+                color: $font-color-hover;
+            }
         }
     }
 }

@@ -9,8 +9,8 @@
   .navbar .nav > li {
     width: 120px;
     text-align: center; }
-  .navbar li:hover {
-    background-color: #bbb; }
+    .navbar .nav > li:hover {
+      background-color: #bbb; }
 
 #content {
   margin: 0;
@@ -21,7 +21,8 @@
 
 main {
   margin: 20px; }
-  main ul, main li {
+  main ul,
+  main li {
     list-style: none; }
   main div[class*="col-"] > h4 {
     text-align: center; }
@@ -30,12 +31,14 @@ main {
     border-top: none;
     border-radius: 0 0 5px 5px;
     padding: 20px; }
-  main .thumbnail:hover {
-    background-color: #eee;
-    cursor: pointer;
-    outline: #07a7e5 solid 2px; }
-    main .thumbnail:hover .caption {
-      color: #07a7e5; }
+  main .thumbnail {
+    padding: 10px; }
+    main .thumbnail:hover {
+      background-color: #eee;
+      cursor: pointer;
+      outline: #07a7e5 solid 2px; }
+      main .thumbnail:hover .caption {
+        color: #07a7e5; }
 
 footer {
   margin: 0;

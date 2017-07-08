@@ -11,8 +11,8 @@
     .nav > li {
          width: 120px;
          text-align: center;
-     }
-     li:hover {
-         background-color: $nav-bg-color-hover;
+         &:hover {
+             background-color: $nav-bg-color-hover;
+         }
      }
 }
