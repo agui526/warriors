@@ -241,7 +241,7 @@ li {
         display: none;
     }
     .toggle-checkbox:checked~.container>.nav {
-    display: flex;
+        display: flex;
     }
     .toggle,
     .toggle-checkbox {
@@ -284,6 +284,7 @@ li {
     .warriors>li:hover::after {
         transform: scale(1);
     }
+
     .player {
         background-size: 120px 160px;
         width: 120px;

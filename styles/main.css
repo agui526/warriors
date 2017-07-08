@@ -1,0 +1,40 @@
+.navbar {
+  margin-bottom: 0 !important; }
+  .navbar li {
+    width: 100px;
+    text-align: center; }
+
+#content {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+  #content > img {
+    width: 100%; }
+
+main {
+  margin: 20px; }
+  main ul, main li {
+    list-style: none; }
+  main div[class*="col-"] > h4 {
+    text-align: center; }
+  main img {
+    margin: 5px; }
+  main .tab-content {
+    margin: 10px; }
+  main .thumbnail:hover {
+    background-color: #eee;
+    cursor: pointer;
+    outline: #07a7e5 solid 2px; }
+    main .thumbnail:hover .caption {
+      color: #07a7e5; }
+
+footer {
+  margin: 0;
+  padding: 0; }
+  footer ul, footer li {
+    list-style: none;
+    padding: 0; }
+  footer div[class*="col-"] > h4 {
+    text-align: center; }
+  footer > .jumbotron {
+    margin-bottom: 0; }

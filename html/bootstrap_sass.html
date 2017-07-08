@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <title>bootstrap & sass</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <a class="navbar-brand" href="#">logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">勇士 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">湖人</a></li>
+                    <li><a href="#">骑士</a></li>
+                    <li><a href="#">马刺</a></li>
+                    <li><a href="#">火箭</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他球队 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">西部球队</li>
+                            <li><a href="#">雷霆</a></li>
+                            <li><a href="#">鹈鹕</a></li>
+                            <li><a href="#">开拓者</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">东部球队</li>
+                            <li><a href="#">奇才</a></li>
+                            <li><a href="#">凯尔特人</a></li>
+                            <li><a href="#">76人</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">更多</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">登录</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">帐号</a></li>
+                            <li><a href="#">帮助</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="bs-docs-header" id="content" tabindex="-1">
+        <img src="../images/nba_amazing.jpg" alt="">
+    </div>
+
+    <main>
+        <div class="container">
+            <ul class="nav nav-tabs .nav-justified">
+                <li role="presentation" class="active"><a href="#nba" data-toggle="tab">NBA比赛</a></li>
+                <li role="presentation"><a href="#cba" data-toggle="tab">CBA比赛</a></li>
+                <li role="presentation"><a href="#global" data-toggle="tab">国际比赛</a></li>
+            </ul>
+            <ul class="tab-content">
+                <li id="nba" class="tab-pane active">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第一场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第二场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第三场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第四场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第五场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第六场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="thumbnail">
+                                        <img src="../images/0.jpg" alt="...">
+                                        <div class="caption">
+                                            <h4>勇士VS骑士 第七场</h4>
+                                            <p>看点：首发、替补、教练的终极较量</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li id="cba" class="tab-pane">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img src="../images/0.jpg" alt="...">
+                                <div class="caption">
+                                    <h4>广东VS新疆 第一场</h4>
+                                    <p>看点：首发、替补、教练的终极较量</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li id="global" class="tab-pane">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img src="../images/0.jpg" alt="...">
+                                <div class="caption">
+                                    <h4>西班牙VS中国 第一场</h4>
+                                    <p>看点：首发、替补、教练的终极较量</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h4><a href="#">虎扑体育</a></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4><a href="#">腾讯体育</a></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4><a href="#">新浪体育</a></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4><a href="#">NBA官网</a></h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="../scripts/bootstrap.js"></script>
+</body>
+
+</html>

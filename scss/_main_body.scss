@@ -1,0 +1,23 @@
+main {
+    margin: 20px;
+    ul, li {
+        list-style: none;
+    }
+    div[class*="col-"] > h4 {
+        text-align: center;
+    }
+    img {
+        margin: 5px;
+    }
+    .tab-content {
+        margin: 10px;
+    }
+    .thumbnail:hover {
+        background-color: $nav-bg-color;
+        cursor: pointer;
+        outline: $font-color-hover solid 2px;
+        .caption {
+            color: $font-color-hover;
+        }
+    }
+}
