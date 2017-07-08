@@ -1,8 +1,12 @@
 .navbar {
-  margin-bottom: 0 !important; }
-  .navbar li {
-    width: 100px;
+  margin-bottom: 0; }
+  .navbar .navbar-collapse {
+    padding: 0 20px 0 20px; }
+  .navbar .nav > li {
+    width: 120px;
     text-align: center; }
+  .navbar li:hover {
+    background-color: #bbb; }
 
 #content {
   margin: 0;
@@ -17,10 +21,11 @@ main {
     list-style: none; }
   main div[class*="col-"] > h4 {
     text-align: center; }
-  main img {
-    margin: 5px; }
   main .tab-content {
-    margin: 10px; }
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 20px; }
   main .thumbnail:hover {
     background-color: #eee;
     cursor: pointer;

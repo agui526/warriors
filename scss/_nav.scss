@@ -1,7 +1,13 @@
 .navbar {
-    margin-bottom: 0 !important; 
-     li {
-         width: 100px;
+    margin-bottom: 0; 
+    .navbar-collapse {
+        padding: 0 20px 0 20px;
+    }
+    .nav > li {
+         width: 120px;
          text-align: center;
+     }
+     li:hover {
+         background-color: $nav-bg-color-hover;
      }
 }

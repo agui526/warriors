@@ -6,11 +6,11 @@ main {
     div[class*="col-"] > h4 {
         text-align: center;
     }
-    img {
-        margin: 5px;
-    }
     .tab-content {
-        margin: 10px;
+        border: 1px solid $border-color;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
     }
     .thumbnail:hover {
         background-color: $nav-bg-color;
