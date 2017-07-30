@@ -1,0 +1,74 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    font-family: Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+.result {
+    flex: 1;
+    display: flex;
+    color: #fff;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-weight: 100;
+    font-size: 56px;
+    background-color: #202020;
+    padding: 2% 7%;
+}
+
+.keypad {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #333;
+}
+
+.keypad .keybtn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 24%;
+    height: calc(96vw / 4);
+    max-height: 96px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 24px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.keypad .keybtn.cal {
+    background-color: #aaa;
+}
+
+.keypad .keybtn.number,
+.keypad .keybtn.dot {
+    background-color: #ccc;
+}
+
+.keypad .keybtn.operator[data-operator],
+.keypad .keybtn.operator.equal {
+    background-color: #F98610;
+    color: white;
+}
+
+.keypad .keybtn.number.zero {
+    border-right: 1px solid transparent;
+}
