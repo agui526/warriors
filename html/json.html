@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        #cats {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cat {
+            flex-basis: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #eee;
+            padding: 10px 10px;
+            /*margin: 5px;*/
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+
+        #btn {
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+    <title>JSON测试</title>
+</head>
+
+<body>
+    <button id="btn">点击加载更多</button>
+    <div id="cats">
+
+    </div>
+    
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        (function () {
+            let $cats = document.querySelector('#cats');
+            let $btn = document.querySelector('#btn');
+
+            let page = 1;
+            let pageSize = 10;
+
+            const CAT_URL = 'https://octocats.now.sh/api/octocats';
+
+            function load(url) {
+                $.getJSON(url, function (res) {
+                    let cats = res.data;
+
+                    let html = cats.map(function (cat) {
+                        return `<div class="cat"><p>${cat.name}</p><img src="${cat.image}" ></div>`;
+                    }).join('');
+
+                    $cats.innerHTML = html + $cats.innerHTML;
+
+                    if(!res.pagination.nextPage) {
+                        $btn.disabled = true;
+                        $btn.innerText = '没了';
+                    }
+                });
+            }
+
+            load(CAT_URL);
+
+            $btn.addEventListener('click', function() {
+                page += 1;
+                let currURL = CAT_URL + `?page=${page}`;
+                load(currURL);
+            })
+
+
+        })()
+    </script>
+</body>
+
+</html>
