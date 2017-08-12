@@ -41,6 +41,10 @@
             color: #fff;
             cursor: pointer;
         }
+        a.active {
+            background-color: #1f3a87;
+            color: #fff;
+        }
 
         .pageBox,
         .typeBox {
@@ -123,7 +127,7 @@
     <div id="main">
         <header>
             <div class="typeBox">
-                <a class="all btn">全部</a>
+                <a class="all btn active">全部</a>
                 <a class="news btn">新闻</a>
                 <a class="work btn">作品</a>
                 <a class="jobs btn">工作</a>
@@ -150,6 +154,14 @@
         (function () {
 
             let pagination = null;
+
+            function removeActive() {
+                let $typeBox = document.querySelector('.typeBox');
+                let $btns = $typeBox.querySelectorAll('.btn');
+                for(let i = 0; i < $btns.length; i ++) {
+                    $btns[i].classList.remove('active');
+                }
+            }
 
             function getHTML(json) {
                 let html = '',
@@ -235,35 +247,48 @@
                         getHTML(json);
                     }
                 }
+                
                 let $type = document.querySelector('.type');
                 
                 if ($target.matches('.all')) {
                     $type.dataset.type = '';
+                    removeActive();
+                    $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts';
                     $.ajax(ajaxObject);
                 }
                 if ($target.matches('.news')) {
                     $type.dataset.type = 'news';
+                    removeActive();
+                    $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts?type=news';
                     $.ajax(ajaxObject);
                 }
                 if ($target.matches('.work')) {
                     $type.dataset.type = 'work';
+                    removeActive();
+                    $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts?type=work';
                     $.ajax(ajaxObject);
                 }
                 if ($target.matches('.jobs')) {
                     $type.dataset.type = 'jobs';
+                    removeActive();
+                    $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts?type=jobs';
                     $.ajax(ajaxObject);
                 }
                 if ($target.matches('.asks')) {
                     $type.dataset.type = 'asks';
+                    removeActive();
+                    $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts?type=asks';
                     $.ajax(ajaxObject);
                 }
                 if ($target.matches('.jokes')) {
                     $type.dataset.type = 'joke';
+                    removeActive();
+                    $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts?type=joke';
                     $.ajax(ajaxObject);
                 }
