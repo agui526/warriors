@@ -238,6 +238,18 @@
                         })
                     })
                 }
+
+
+                let $edits = document.querySelectorAll('.edit');
+                let edit_len = $edits.length;
+
+                for (let i = 0; i < edit_len; i++) {
+                    $edits[i].addEventListener('click', function (event) {
+                        alert('这个也没做');
+                    })
+                }
+
+
             }
 
             document.addEventListener('click', function (event) {
@@ -292,6 +304,9 @@
                     $target.classList.add('active');
                     ajaxObject.url = 'https://fe13.now.sh/api/posts?type=joke';
                     $.ajax(ajaxObject);
+                }
+                if ($target.matches('.new')) {
+                    alert('这个还没做');
                 }
 
                 if ($target.matches('.first')) {
