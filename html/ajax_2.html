@@ -14,7 +14,7 @@
         }
 
         body {
-            min-width: 768px;
+            min-width: 667px;
         }
 
         #main {
@@ -185,71 +185,6 @@
 				</li>`;
                 }
                 document.querySelector('#list').innerHTML = html;
-
-                let $details = document.querySelectorAll('.detail');
-                let detail_len = $details.length;
-
-                for (let i = 0; i < detail_len; i++) {
-                    $details[i].addEventListener('click', function (event) {
-                        let $target = this.parentElement.parentElement.nextElementSibling;
-                        if ($target.style.display === 'block') {
-                            $target.style.display = 'none'
-                        } else {
-                            $target.style.display = 'block'
-                        }
-                    })
-                }
-
-                let $upvotes = document.querySelectorAll('.upvote');
-                let upvote_len = $upvotes.length;
-
-                for (let i = 0; i < upvote_len; i++) {
-                    $upvotes[i].addEventListener('click', function (event) {
-                        let $target = event.target;
-                        if ($target.dataset.voting) return;
-                        $.ajax({
-                            url: `https://fe13.now.sh/api/posts/${$target.parentElement.dataset.id}/upvote`,
-                            method: 'PUT',
-                            beforeSend: function () {
-                                $target.dataset.voting = true;
-                            },
-                            success: function (json) {
-                                $target.innerHTML = '△ ' + json.score + '赞';
-                            },
-                            complete: function () {
-                                $target.dataset.voting = false;
-                            }
-                        })
-                    })
-                }
-
-                let $deletes = document.querySelectorAll('.delete');
-                let delete_len = $deletes.length;
-
-                for (let i = 0; i < delete_len; i++) {
-                    $deletes[i].addEventListener('click', function (event) {
-                        let $target = event.target;
-                        $.ajax({
-                            url: `https://fe13.now.sh/api/posts/${$target.parentElement.dataset.id}`,
-                            method: 'DELETE',
-                            success: function (json) {
-                                location.reload();
-                            }
-                        })
-                    })
-                }
-
-
-                let $edits = document.querySelectorAll('.edit');
-                let edit_len = $edits.length;
-
-                for (let i = 0; i < edit_len; i++) {
-                    $edits[i].addEventListener('click', function (event) {
-                        alert('这个也没做');
-                    })
-                }
-
-
             }
 
             document.addEventListener('click', function (event) {
@@ -260,8 +195,48 @@
                         getHTML(json);
                     }
                 }
-
                 let $type = document.querySelector('.type');
+
+                if ($target.matches('.detail')) {
+                    let $text = $target.parentElement.parentElement.nextElementSibling;
+                    if ($text.style.display === 'block') {
+                        $text.style.display = 'none'
+                    } else {
+                        $text.style.display = 'block'
+                    }
+                }
+
+                if ($target.matches('.upvote')) {
+                    if ($target.dataset.voting) return;
+                    $.ajax({
+                        url: `https://fe13.now.sh/api/posts/${$target.parentElement.dataset.id}/upvote`,
+                        method: 'PUT',
+                        beforeSend: function () {
+                            $target.dataset.voting = true;
+                        },
+                        success: function (json) {
+                            $target.innerHTML = '△ ' + json.score + '赞';
+                        },
+                        complete: function () {
+                            $target.dataset.voting = false;
+                        }
+                    })
+                }
+
+                if ($target.matches('.delete')) {
+                    $.ajax({
+                        url: `https://fe13.now.sh/api/posts/${$target.parentElement.dataset.id}`,
+                        method: 'DELETE',
+                        success: function (json) {
+                            location.reload();
+                        }
+                    })
+                }
+
+                if ($target.matches('.detail')) {
+                    alter('这个也没做');
+                }
+
                 
                 if ($target.matches('.all')) {
                     $type.dataset.type = '';
@@ -327,8 +302,7 @@
                     ajaxObject.url = `https://fe13.now.sh/api/posts?type=${$type.dataset.type}&page=${pagination.totalPages}`;
                     $.ajax(ajaxObject);
                 }
-
-                
+   
             })
 
             $.ajax({
