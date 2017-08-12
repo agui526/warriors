@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax进阶练习</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        a {
+            height: 20px;
+            font: 12px/20px "Helvetica";
+            border: 1px solid #e0e1e2;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            color: #2052a3;
+        }
+
+        .btn {
+            width: 60px;
+        }
+
+        a:hover {
+            background-color: #1f3a87;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .pageBox,
+        .typeBox {
+            display: flex;
+            justify-content: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        #content {
+            border: 1px solid #e0e1e2;
+            padding: 10px;
+            background-color: #eee;
+        }
+
+        .edit,
+        .delete,
+        .upvote,
+        .detail {
+            height: 20px;
+            font: 12px/20px "宋体";
+            border: none;
+            /*display: inline-block;*/
+            text-align: center;
+            color: #2052a3;
+            margin: 0 5px;
+        }
+
+        ol,
+        li {
+            list-style: none;
+            /*-webkit-padding-start: 5px;*/
+            margin: 8px 0;
+        }
+
+        .text {
+            display: none;
+            width: 100%;
+            /*white-space: normal;*/
+            border: 1px solid #beceeb;
+            padding: 10px;
+            text-indent: 2rem;
+            background-color: #eee;
+        }
+
+        .title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background-color: #beceeb;
+            flex-basis: 75%;
+            /*padding: 10px;*/
+        }
+
+        .oper {
+            display: flex;
+            justify-content: flex-end;
+            flex-basis: 25%;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            background-color: #beceeb;
+            padding: 10px;
+        }
+
+        span {
+            display: none;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <div class="typeBox">
+                <a class="all btn">全部</a>
+                <a class="news btn">新闻</a>
+                <a class="work btn">作品</a>
+                <a class="jobs btn">工作</a>
+                <a class="asks btn">提问</a>
+                <a class="jokes btn">笑话</a>
+                <a class="new btn">＋</a>
+                <span class="type" data-type=""><span>
+            </div>
+            <div class="pageBox">
+                <a class="first btn">第一页</a>
+                <a class="pre btn">上一页</a>
+                <a class="next btn">下一页</a>
+                <a class="last btn">最后一页</a>
+            </div>
+
+        </header>
+        <div id="content">
+            <ol id="list">
+            </ol>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        (function () {
+
+            let pagination = null;
+
+            function getHTML(json) {
+                let html = '',
+                    count = json.data.length;
+                pagination = json.pagination;
+
+                for (let i = 0; i < count; i++) {
+                    html +=
+                        `<li class="item" data-id="${json.data[i]._id}">
+					<div class="head">
+						<div class="title">${json.data[i].title}</div>
+						<div class="oper" data-id="${json.data[i]._id}">
+							<a class="upvote">△ ${json.data[i].score}赞</a>
+							<a class="detail">详情</a>
+							<a class="edit">编辑</a>
+							<a class="delete">删除</a>
+						</div>
+					</div>
+					<div class="text">${json.data[i].text}</div>
+				</li>`;
+                }
+                document.querySelector('#list').innerHTML = html;
+
+                let $details = document.querySelectorAll('.detail');
+                let detail_len = $details.length;
+
+                for (let i = 0; i < detail_len; i++) {
+                    $details[i].addEventListener('click', function (event) {
+                        let $target = this.parentElement.parentElement.nextElementSibling;
+                        if ($target.style.display === 'block') {
+                            $target.style.display = 'none'
+                        } else {
+                            $target.style.display = 'block'
+                        }
+                    })
+                }
+
+                let $upvotes = document.querySelectorAll('.upvote');
+                let upvote_len = $upvotes.length;
+
+                for (let i = 0; i < upvote_len; i++) {
+                    $upvotes[i].addEventListener('click', function (event) {
+                        let $target = event.target;
+                        if ($target.dataset.voting) return;
+                        $.ajax({
+                            url: `https://fe13.now.sh/api/posts/${$target.parentElement.dataset.id}/upvote`,
+                            method: 'PUT',
+                            beforeSend: function () {
+                                $target.dataset.voting = true;
+                            },
+                            success: function (json) {
+                                $target.innerHTML = '△ ' + json.score + '赞';
+                            },
+                            complete: function () {
+                                $target.dataset.voting = false;
+                            }
+                        })
+                    })
+                }
+
+                let $deletes = document.querySelectorAll('.delete');
+                let delete_len = $deletes.length;
+
+                for (let i = 0; i < delete_len; i++) {
+                    $deletes[i].addEventListener('click', function (event) {
+                        let $target = event.target;
+                        $.ajax({
+                            url: `https://fe13.now.sh/api/posts/${$target.parentElement.dataset.id}`,
+                            method: 'DELETE',
+                            success: function (json) {
+                                location.reload();
+                            }
+                        })
+                    })
+                }
+            }
+
+            document.addEventListener('click', function (event) {
+                let $target = event.target;
+                let ajaxObject = {
+                    method: 'GET',
+                    success: function (json) {
+                        getHTML(json);
+                    }
+                }
+                let $type = document.querySelector('.type');
+                
+                if ($target.matches('.all')) {
+                    $type.dataset.type = '';
+                    ajaxObject.url = 'https://fe13.now.sh/api/posts';
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.news')) {
+                    $type.dataset.type = 'news';
+                    ajaxObject.url = 'https://fe13.now.sh/api/posts?type=news';
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.work')) {
+                    $type.dataset.type = 'work';
+                    ajaxObject.url = 'https://fe13.now.sh/api/posts?type=work';
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.jobs')) {
+                    $type.dataset.type = 'jobs';
+                    ajaxObject.url = 'https://fe13.now.sh/api/posts?type=jobs';
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.asks')) {
+                    $type.dataset.type = 'asks';
+                    ajaxObject.url = 'https://fe13.now.sh/api/posts?type=asks';
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.jokes')) {
+                    $type.dataset.type = 'joke';
+                    ajaxObject.url = 'https://fe13.now.sh/api/posts?type=joke';
+                    $.ajax(ajaxObject);
+                }
+
+                if ($target.matches('.first')) {
+                    ajaxObject.url = `https://fe13.now.sh/api/posts?type=${$type.dataset.type}`;
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.pre')) {
+                    let prePage = (pagination.currPage > 1) ? (pagination.currPage - 1) : 1;
+                    ajaxObject.url = `https://fe13.now.sh/api/posts?type=${$type.dataset.type}&page=${prePage}`;
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.next')) {
+                    let nextPage = (pagination.currPage < pagination.totalPages) ? (pagination.currPage + 1) : pagination.totalPages;
+                    ajaxObject.url = `https://fe13.now.sh/api/posts?type=${$type.dataset.type}&page=${nextPage}`;
+                    $.ajax(ajaxObject);
+                }
+                if ($target.matches('.last')) {
+                    ajaxObject.url = `https://fe13.now.sh/api/posts?type=${$type.dataset.type}&page=${pagination.totalPages}`;
+                    $.ajax(ajaxObject);
+                }
+
+                
+            })
+
+            $.ajax({
+                url: 'https://fe13.now.sh/api/posts',
+                method: 'GET',
+                success: function (json) {
+                    getHTML(json);
+                }
+            });
+
+        })();
+    </script>
+</body>
+
+</html>
