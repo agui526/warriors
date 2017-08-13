@@ -131,3 +131,9 @@ body,
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.note .search {
+    color: red;
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+}

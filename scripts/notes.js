@@ -14,13 +14,14 @@
             this.$notes = this.$el.querySelector('.notes');
             // this.$trash = this.$note.querySelector('.nav-btn-trash');  
             this.$editor = this.$note.querySelector('.editor');
+            this.$searchInput = this.$el.querySelector('#search');
 
             this.$el.addEventListener('click', this, false);
+            this.$el.addEventListener('keyup', this, false);
 
-            this.render();
+            this.render(this.notes);
 
         },
-
 
 
         handleEvent(event) {
@@ -38,6 +39,9 @@
                     break;
                 case $target.matches('.fa-trash'):
                     this.delete();
+                    break;
+                case $target.matches('#search') && event.type === 'keyup':
+                    this.search(event);
                     break;
             }
 
@@ -63,7 +67,7 @@
 
             this.save();
             this.clear();
-            this.render();
+            this.render(this.notes);
             this.pop();
         },
 
@@ -73,8 +77,8 @@
         clear() {
             this.$editor.value = '';
         },
-        render() {
-            this.$notes.innerHTML = this.notes
+        render(arr) {
+            this.$notes.innerHTML = arr
                 .map(function (note, i) {
                     return `<div class='note' data-index='${i}'>${note.text}</div>`;
                 })
@@ -94,8 +98,25 @@
             this.$editor.value = '';
             this.notes.splice(this.selectedIndex, 1);
             this.save();
-            this.render();
+            this.render(this.notes);
             this.pop();
+        },
+
+        search(event) {
+            let searchText = event.target.value;
+            let searchReg = new RegExp(searchText);
+            this.searchNotes = this.notes.filter(function(note) {
+                return note.text.indexOf(searchText) > 0;
+            }).map(function(note, i) {
+                return `<div class='note' data-index='${i}'>` + 
+                    `${note.text}`.replace(searchReg, `<span class="search">${searchText}</span>`) + `</div>`
+            });
+
+            if (searchText) {
+                this.$notes.innerHTML = this.searchNotes.join('');
+            } else {
+                this.render(this.notes);
+            }
         }
 
     }
