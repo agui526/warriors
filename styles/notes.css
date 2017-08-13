@@ -1,0 +1,133 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+.app {
+    height: 100%;
+    background-color: #EEDBBA;
+    min-width: 375px;
+}
+
+.note-view,
+.main-view,
+.notes-view,
+.settings-view {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+}
+
+.main-view .notes-view {
+    z-index: 1;
+}
+
+.main-view .settings-view {
+    z-index: 2;
+    transform: rotateY(180deg);
+}
+
+.note-view {
+    z-index: 9;
+    transform: translateX(100%);
+    transition: .5s;
+}
+
+.note-view.push {
+    transform: translateX(0);
+}
+
+.notes-view .header,
+.note-view .header {
+    /*height: 48px;*/
+    background-color: #716052;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-family: "Helvetica";
+}
+
+.notes-view .header .fa,
+.note-view .header .fa {
+    border: 1px solid #58493E;
+    border-radius: 4px;
+    padding: 4px 16px;
+}
+
+.notes-view .notes {
+    background-color: #EFD8B2;
+    /*height: calc(100vh - 50px);*/
+}
+
+.note-view {
+    height: 100%;
+    width: 100%;
+}
+
+.editor {
+    background-color: #EFD8B2;
+    height: calc(100vh - 50px);
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 24px;
+    line-height: calc((100vh - 50px) / 16);
+    color: #716052;
+    outline: 0;
+}
+
+.search {
+    padding: 10px 16px;
+}
+
+.search form {
+    height: 36px;
+    position: relative;
+    font-size: 18px;
+    color: #58493E;
+}
+
+.search input {
+    width: 100%;
+    height: 100%;
+    border-radius: 42px;
+    border: 2px solid #58493E;
+    background-color: #F9F4EF;
+    outline: 0;
+    text-indent: 2em;
+    font-size: 18px;
+    color: #58493E;
+}
+
+.search input:focus {
+    background-color: #fff;
+}
+
+.search .fa {
+    position: absolute;
+    left: 14px;
+    top: 8px;
+}
+
+.note {
+    color: #716052;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 0 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid #eee;
+    max-width: calc(100% - 15px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
