@@ -106,7 +106,7 @@
             let searchText = event.target.value;
             let searchReg = new RegExp(searchText);
             this.searchNotes = this.notes.filter(function(note) {
-                return note.text.indexOf(searchText) > 0;
+                return note.text.indexOf(searchText) > -1;
             }).map(function(note, i) {
                 return `<div class='note' data-index='${i}'>` + 
                     `${note.text}`.replace(searchReg, `<span class="search">${searchText}</span>`) + `</div>`
